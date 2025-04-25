@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 95%;
+    --foreground: 0 0% 20%;
+    
+    --primary: 209 100% 42%;
+    --primary-foreground: 0 0% 100%;
+    
+    --primary-light: 209 69% 51%;
+    --primary-dark: 209 100% 31%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 20%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 20%;
+    
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 20%;
+    
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 20%;
+    
+    --destructive: 350 89% 51%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 0 0% 89%;
+    --input: 0 0% 89%;
+    --ring: 0 0% 83%;
+    
+    --radius: 0.5rem;
+    
+    --status-success: 120 85% 28%;
+    --status-warning: 22 99% 42%;
+    --status-error: 350 89% 51%;
+    
+    --chart-1: 209 100% 42%;
+    --chart-2: 120 85% 28%;
+    --chart-3: 22 99% 42%;
+    --chart-4: 350 89% 51%;
+    --chart-5: 275 80% 40%;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+  
+  .connection-card:hover .connection-actions {
+    opacity: 1;
+  }
+  
+  .connection-actions {
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+  }
+  
+  .active-sessions-chart {
+    height: 180px;
+    position: relative;
+  }
+  
+  .session-tooltip {
+    transition: all 0.15s ease;
+    opacity: 0;
+  }
+  
+  .session-dot:hover + .session-tooltip {
+    opacity: 1;
+  }
+  
+  .session-dot {
+    cursor: pointer;
+  }
+}

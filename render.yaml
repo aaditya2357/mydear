@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: cloudconnect
+    env: node
+    buildCommand: ./render-build.sh
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+    plan: free
+    
+databases:
+  - name: cloudconnect-db
+    databaseName: cloudconnect
+    user: cloudconnect_user
